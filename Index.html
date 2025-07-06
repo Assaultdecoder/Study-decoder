@@ -1,24 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Access Study Decoder</title>
-  <script>
-    function generateKey() {
-      window.location.href = "https://dashboard.smallshorts.com/VG8Pg"; // ← Replace with your shortlink
-      localStorage.setItem("access_time", Date.now());
+  <meta charset="UTF-8">
+  <title>Study Decoder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
 
-    function checkAccess() {
-      const time = localStorage.getItem("access_time");
-      if (time && (Date.now() - time < 86400000)) {
-        window.location.href = "main.html";
-      }
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
     }
-    checkAccess();
-  </script>
+
+    .popup-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 300px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .popup-box a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #0088cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .close-btn {
+      margin-top: 10px;
+      background: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .btn {
+      margin-top: 100px;
+      padding: 15px 25px;
+      font-size: 18px;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Click below to Generate Key</h1>
-  <button onclick="generateKey()">Generate Key</button>
+
+  <div class="popup" id="popup">
+    <div class="popup-box">
+      <h3>Join our Telegram Channel</h3>
+      <a href="https://t.me/+NMFzYIQPco83YjY9" target="_blank">Join Now</a><br>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <h2>🎓 Welcome to Study Decoder</h2>
+  <p>Click below to generate your access key.</p>
+  <button class="btn" onclick="redirectToKey()">Generate Key</button>
+
+  <script>
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    function redirectToKey() {
+      window.location.href = "https://dashboard.smallshorts.com/VG8Pg";
+    }
+  </script>
+
 </body>
 </html>
