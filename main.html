@@ -1,22 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Study Decoder - Learn Smarter</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <script src="assets/script.js" defer></script>
-  <script src="database.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Study Decoder - Main</title>
+  <style>
+    body { font-family: Arial; background: #f4f4f4; text-align: center; margin: 0; padding: 20px; }
+    .popup {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    .popup-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .popup-box a {
+      background: #0088cc;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: block;
+      margin-top: 10px;
+    }
+    .close-btn {
+      margin-top: 10px;
+      background: red;
+      color: white;
+      padding: 5px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .batches {
+      margin-top: 50px;
+    }
+    .batch {
+      background: white;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 400px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 <body>
-  <!-- Telegram Join Dialog -->
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <h3>Join our Telegram Channel</h3>
+
+  <div class="popup" id="popup">
+    <div class="popup-box">
+      <h3>Join Telegram Channel</h3>
       <a href="https://t.me/+NMFzYIQPco83YjY9" target="_blank">Join Now</a>
-      <button onclick="closePopup()">Close</button>
+      <button class="close-btn" onclick="closePopup()">Close</button>
     </div>
   </div>
 
   <h1>📚 Study Decoder</h1>
-  <div id="batchContainer"></div>
+  <div class="batches">
+    <div class="batch">
+      <h3>Batch A</h3>
+      <p>Physics | Chemistry | Math</p>
+    </div>
+    <div class="batch">
+      <h3>Batch B</h3>
+      <p>Biology | English | GK</p>
+    </div>
+  </div>
+
+  <script>
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
