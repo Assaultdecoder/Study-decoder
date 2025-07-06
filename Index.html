@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Access Study Decoder</title>
+  <script>
+    function generateKey() {
+      window.location.href = "https://exe.io/your-shortlink"; // ← Replace with your shortlink
+      localStorage.setItem("access_time", Date.now());
+    }
 
+    function checkAccess() {
+      const time = localStorage.getItem("access_time");
+      if (time && (Date.now() - time < 86400000)) {
+        window.location.href = "main.html";
+      }
+    }
+    checkAccess();
+  </script>
+</head>
+<body>
+  <h1>Click below to Generate Key</h1>
+  <button onclick="generateKey()">Generate Key</button>
+</body>
+</html>
